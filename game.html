@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Learning Game - Play</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="game-layout">
+        <header class="game-header">
+            <a href="index.html" class="exit-btn"><i class="fa-solid fa-xmark"></i></a>
+            <div class="progress-container">
+                <span id="progress-text">คำถามที่ 0/0</span>
+                <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+            </div>
+            <div class="score-display">คะแนน: <span id="current-score">0</span></div>
+        </header>
+
+        <main class="game-main">
+            <section class="visual-panel">
+                <div class="card-wrapper" id="anatomy-visual-container">
+                    </div>
+            </section>
+
+            <section class="quiz-panel">
+                <div class="quiz-card">
+                    <h2 id="question-text" class="question-title">กำลังโหลดคำถาม...</h2>
+                    
+                    <div id="options-group" class="options-vertical-group">
+                        </div>
+                    
+                    <div id="explanation-box" class="explanation-container d-none">
+                        <div class="explanation-title">
+                            <i class="fa-solid fa-circle-info"></i> คำอธิบายทางสรีรวิทยา:
+                        </div>
+                        <p id="explanation-text-content"></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="game-footer">
+            <button id="btn-toggle-sound" class="icon-action-btn"><i class="fa-solid fa-volume-high"></i></button>
+            <button id="btn-next" class="btn btn-primary btn-next-step" disabled>
+                ถัดไป <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </footer>
+    </div>
+
+    <script type="module" src="js/game.js"></script>
+</body>
+</html>

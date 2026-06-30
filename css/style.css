@@ -1,0 +1,196 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================================================== */
+:root {
+    --primary-color: #1e3a8a;       /* Navy Blue */
+    --primary-light: #3b82f6;      /* Light Blue */
+    --secondary-color: #64748b;    /* Slate Gray */
+    --background-color: #f8fafc;   /* Soft Off-White */
+    --surface-color: #ffffff;      /* Pure White */
+    
+    /* Notification & Priority Colors */
+    --priority-high: #ef4444;      /* Red */
+    --priority-medium: #3b82f6;    /* Blue */
+    --priority-low: #eab308;       /* Yellow */
+    
+    /* Text Colors */
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    
+    /* System Properties */
+    --border-radius: 16px;         /* ปรับให้โค้งมนดูทันสมัยขึ้น */
+    --transition-speed: 0.3s;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 10px 25px -5px rgba(30, 58, 138, 0.08), 0 8px 10px -6px rgba(30, 58, 138, 0.05); /* เงาละมุนขึ้น */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   2. LAYOUT CONTAINERS
+   ========================================================================== */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.03), transparent 40%),
+                radial-gradient(circle at bottom left, rgba(30, 58, 138, 0.02), transparent 40%);
+}
+
+/* Welcome & Result Shared Card Layout */
+.welcome-card, .result-card {
+    background-color: var(--surface-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    padding: 48px 40px;        /* เพิ่ม Padding ด้านบน-ล่างให้โปร่งสบายตาขึ้น */
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY & HEADER
+   ========================================================================== */
+h1 {
+    color: var(--primary-color);
+    font-size: 2.2rem;         /* ปรับขนาดให้อ่านง่ายและเด่นชัด */
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+/* ==========================================================================
+   4. FEATURE INTRO LIST (ปรับปรุงระยะห่างและการจัดวางตรงกลาง)
+   ========================================================================== */
+.feature-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 /* เพิ่มระยะห่างระหว่างแต่ละข้อ */
+    margin: 36px auto;         /* จัดก้อนให้อยู่กึ่งกลางการ์ดและเว้นระยะบน-ล่าง */
+    max-width: 380px;          /* บีบความกว้างเข้ามาเพื่อให้ข้อความชิดซ้ายดูสมดุล */
+    text-align: left;          /* ให้ข้อความชิดซ้ายภายในบล็อก */
+    background-color: #f8fafc; /* เพิ่มพื้นหลังจางๆ ให้ดูเป็นสัดส่วน */
+    padding: 20px 24px;
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;                 /* เพิ่มช่องว่างระหว่างไอคอนกับข้อความ */
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.feature-item i {
+    color: var(--primary-light); /* ใช้สีฟ้าสดใสขึ้นลดความอึดอัด */
+    width: 28px;                /* ล็อกความกว้างของไอคอนให้ข้อความด้านหลังขึ้นตรงกันเป๊ะ */
+    height: 28px;
+    background-color: rgba(59, 130, 246, 0.1); /* วงกลมรองหลังไอคอนแบบจางๆ */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;            /* ป้องกันไอคอนบีบตัว */
+}
+
+/* ==========================================================================
+   5. BUTTONS & ACTIONS (ปรับระยะห่างระหว่างปุ่ม)
+   ========================================================================== */
+.welcome-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;                 /* เพิ่มช่องว่างระหว่างปุ่มสองปุ่มชัดเจน */
+    margin-top: 32px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;       /* ความโค้งมนสอดคล้องกับการ์ด */
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--surface-color);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #172554;
+    transform: translateY(-2px); /* ยกตัวขึ้นเล็กน้อยเวลา Hover */
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.25);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid #e2e8f0;   /* ใช้ขอบสีเทาอ่อนสะอาดตาแทนสีกรมท่าเข้ม */
+}
+
+.btn-secondary:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.btn-lg {
+    padding: 16px 32px;
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   6. MISC UTILITIES
+   ========================================================================== */
+.logo-container {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.08), rgba(59, 130, 246, 0.12));
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2rem;
+    margin: 0 auto 24px auto;
+}
+
+.text-success { color: #10b981; }
+.text-danger { color: var(--priority-high); }

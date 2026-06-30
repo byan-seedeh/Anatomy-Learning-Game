@@ -1,0 +1,92 @@
+/* ==========================================================================
+   1. TROPHY ANIMATION EFFECT
+   ========================================================================== */
+.trophy-container {
+    width: 90px;
+    height: 90px;
+    background-color: #fef9c3;
+    color: #eab308;
+    font-size: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.result-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   2. CIRCULAR SCORE DISPLAY
+   ========================================================================== */
+.score-section {
+    margin: 32px 0;
+}
+
+.score-circle {
+    width: 160px;
+    height: 160px;
+    border: 8px solid #f1f5f9;
+    border-top-color: var(--primary-color); /* สามารถพัฒนาเพิ่มเป็น Dynamic Border Circle ได้ */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+}
+
+.score-number-box {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.score-total {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.feedback-text {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+/* ==========================================================================
+   3. DETAILS BREAKDOWN LIST
+   ========================================================================== */
+.summary-details {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    padding: 16px 24px;
+    margin-bottom: 32px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.detail-row:not(:last-child) {
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.detail-row span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+}
+
+.result-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

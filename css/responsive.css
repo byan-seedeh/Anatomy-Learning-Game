@@ -1,0 +1,55 @@
+/* ==========================================================================
+   1. TABLET LAYOUTS (Screens smaller than 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+    /* Game Panel changes to single vertical column */
+    .game-layout {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+    
+    .visual-card {
+        min-height: 280px;
+    }
+
+    /* Dashboard grids convert from 3 to 2 columns */
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================================================
+   2. MOBILE LAYOUTS (Screens smaller than 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Hide Sidebars and adapt layouts */
+    .dashboard-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+    }
+    
+    .sidebar-brand { margin-bottom: 0; }
+    .sidebar-menu { display: none; } /* สามารถเชื่อมต่อกับแฮมเบอร์เกอร์เมนูได้ในอนาคต */
+    .sidebar-user { border-top: none; padding-top: 0; }
+
+    .dashboard-main {
+        padding: 20px;
+    }
+
+    .metrics-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* Typography scale down */
+    h1 { font-size: 1.6rem; }
+    .welcome-card, .result-card { padding: 24px; }
+    .game-header { padding: 12px 16px; }
+    .progress-wrapper { margin: 0 12px; }
+}

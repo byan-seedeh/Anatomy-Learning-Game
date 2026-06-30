@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anatomy Edu - Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="sidebar-brand">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span>Anatomy Edu</span>
+                </div>
+                <nav class="sidebar-menu">
+                    <a href="index.html" class="menu-item">
+                        <i class="fa-solid fa-house"></i>
+                        <span>หน้าแรก</span>
+                    </a>
+                    <a href="dashboard.html" class="menu-item active">
+                        <i class="fa-solid fa-chart-pie"></i>
+                        <span>แดชบอร์ด</span>
+                    </a>
+                    <a href="game.html" class="menu-item">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <span>เข้าเล่นเกม</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-profile-wrapper">
+                    <div class="user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="user-info">
+                        <span class="user-name">ผู้เรียนทั่วไป</span>
+                        <span class="user-status">Online</span>
+                    </div>
+                </div>
+                <button id="btn-logout" class="logout-icon-btn" title="ออกจากระบบ">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <h1 class="main-title">แผงควบคุมและประวัติการเรียนรู้</h1>
+                <p class="subtitle">ติดตามสถิติการเล่นเกมและการทำความเข้าใจบทเรียน Office Syndrome ของคุณ</p>
+            </header>
+
+            <section class="metrics-grid">
+                <div class="metric-card card-blue">
+                    <div class="metric-icon"><i class="fa-solid fa-gamepad"></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">จำนวนครั้งที่เล่น</span>
+                        <h2 id="total-plays" class="metric-value">0</h2>
+                    </div>
+                </div>
+                <div class="metric-card card-green">
+                    <div class="metric-icon"><i class="fa-solid fa-star"></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">คะแนนเฉลี่ย</span>
+                        <h2 id="avg-score" class="metric-value">0.0</h2>
+                    </div>
+                </div>
+                <div class="metric-card card-red">
+                    <div class="metric-icon"><i class="fa-solid fa-fire"></i></div>
+                    <div class="metric-info">
+                        <span class="metric-label">คะแนนสูงสุด</span>
+                        <h2 id="max-score" class="metric-value">0</h2>
+                    </div>
+                </div>
+            </section>
+
+            <section class="history-section">
+                <div class="section-card">
+                    <h3 class="section-title"><i class="fa-solid fa-clock-rotate-left"></i> ประวัติการทดสอบล่าสุด</h3>
+                    <div class="table-responsive">
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>ครั้งที่</th>
+                                    <th>วันที่และเวลา</th>
+                                    <th>คะแนนสุทธิ</th>
+                                    <th>สถานะประเมิน</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-table-body">
+                                </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="js/dashboard.js"></script>
+    <script>
+        document.getElementById('btn-logout')?.addEventListener('click', () => {
+            if(confirm('คุณต้องการออกจากระบบใช่หรือไม่?')) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
