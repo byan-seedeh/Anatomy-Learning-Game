@@ -1,6 +1,3 @@
-ได้เลย นี่คือ README แบบ “โปรระดับ GitHub” สำหรับโปรเจกต์ **Anatomy Learning Game** ที่ดูสะอาด สวย และน่าใช้มาก 👇
-
----
 
 ````md
 # 🧠 Anatomy Learning Game
